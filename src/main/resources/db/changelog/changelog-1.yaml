@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - changeSet:
+      id: payment-table
+      author: Viktor_Khokhliuk
+      changes:
+        - createTable:
+            tableName: payment
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey:  true
+                    nullable:  false
+              - column:
+                  name: first_name
+                  type: VARCHAR(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: VARCHAR(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: patronymic
+                  type: VARCHAR(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: sum
+                  type: DOUBLE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: VARCHAR(60)
+                  constraints:
+                    nullable: false
+
+#        - sqlFile:
+#          dbms: 'postgresql'
+#          splitStatements: true
+#          relativeToChangelogFile: true
+#          path: sql/payment-table.sql
+#          stripComments: true
+
