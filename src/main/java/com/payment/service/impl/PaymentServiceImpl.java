@@ -2,7 +2,7 @@ package com.payment.service.impl;
 
 import com.payment.domain.Payment;
 import com.payment.domain.PaymentStatus;
-import com.payment.dto.TicketPaymentDto;
+import com.payment.dto.PaymentCreatingDto;
 import com.payment.mapper.TicketPaymentDtoToPaymentMapper;
 import com.payment.repository.PaymentRepository;
 import com.payment.service.PaymentService;
@@ -25,8 +25,8 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public Payment createPayment(TicketPaymentDto ticketPaymentDto) {
-        Payment newPayment = paymentMapper.map(ticketPaymentDto);
+    public Payment createPayment(PaymentCreatingDto paymentCreatingDto) {
+        Payment newPayment = paymentMapper.map(paymentCreatingDto);
         return paymentRepository.save(newPayment);
     }
 

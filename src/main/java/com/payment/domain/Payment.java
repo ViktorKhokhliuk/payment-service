@@ -27,5 +27,5 @@ public class Payment {
     private Double sum;
 
     @Column("status")
-    private PaymentStatus paymentStatus;
+    private PaymentStatus status;
 }

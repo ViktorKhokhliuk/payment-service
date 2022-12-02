@@ -3,7 +3,7 @@ package com.payment.controller;
 import com.payment.domain.Payment;
 import com.payment.domain.PaymentStatus;
 import com.payment.dto.ResponsePaymentIdDto;
-import com.payment.dto.TicketPaymentDto;
+import com.payment.dto.PaymentCreatingDto;
 import com.payment.service.PaymentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,14 +19,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class PaymentController {
     private final PaymentService paymentService;
 
-    @GetMapping("/{id}")
+    @GetMapping("/status/{id}")
     public PaymentStatus getPaymentStatus(@PathVariable(name = "id") Long paymentId) {
         return paymentService.getStatusByPaymentId(paymentId);
     }
 
     @PostMapping
-    public ResponsePaymentIdDto payForTicket(@RequestBody TicketPaymentDto ticketPaymentDto) {
-        Long paymentId = paymentService.createPayment(ticketPaymentDto).getId();
+    public ResponsePaymentIdDto payForTicket(@RequestBody PaymentCreatingDto paymentCreatingDto) {
+        Long paymentId = paymentService.createPayment(paymentCreatingDto).getId();
         return new ResponsePaymentIdDto(paymentId);
     }
 

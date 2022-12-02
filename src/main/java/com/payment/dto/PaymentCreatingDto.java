@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Getter
-public class TicketPaymentDto {
+public class PaymentCreatingDto {
 
     private final String firstName;
     private final String lastName;
