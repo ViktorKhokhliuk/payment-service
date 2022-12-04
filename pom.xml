@@ -17,6 +17,7 @@
 
 	<properties>
 		<java.version>17</java.version>
+		<spring.fox.swagger.version>3.0.0</spring.fox.swagger.version>
 	</properties>
 
 	<dependencies>
@@ -44,6 +45,21 @@
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>${spring.fox.swagger.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${spring.fox.swagger.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${spring.fox.swagger.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mockito</groupId>
