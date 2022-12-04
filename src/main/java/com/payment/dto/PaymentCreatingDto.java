@@ -1,15 +1,12 @@
 package com.payment.dto;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.Data;
 
-@RequiredArgsConstructor
-@Getter
+@Data
 public class PaymentCreatingDto {
 
     private final String firstName;
     private final String lastName;
     private final String patronymic;
     private final Double sum;
-
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TicketPaymentDtoToPaymentMapper {
+
     public Payment map(PaymentCreatingDto dto) {
         Payment payment = new Payment();
         payment.setFirstName(dto.getFirstName());

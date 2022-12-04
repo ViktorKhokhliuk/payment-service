@@ -4,10 +4,15 @@ import com.payment.domain.Payment;
 import com.payment.domain.PaymentStatus;
 import com.payment.dto.PaymentCreatingDto;
 
+import java.util.List;
+
 public interface PaymentService {
-    PaymentStatus getStatusByPaymentId(Long paymentId);
 
     Payment createPayment(PaymentCreatingDto paymentCreatingDto);
 
-    Iterable<Payment> findAll();
+    List<Payment> findAllByStatus(PaymentStatus status);
+
+    Payment findById(Long id);
+
+    void updateAll(List<Payment> payments);
 }
